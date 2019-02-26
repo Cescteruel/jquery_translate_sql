@@ -1,0 +1,35 @@
+
+<html>
+<head>
+<title>Translate</title>
+
+<script type="text/javascript">
+			
+			 var myvalue = $.parseJSON( localStorage["translate"] ); //returns actual JSON object
+
+			 function traducir(){
+				var translate = function (jsdata)
+				{	
+					$("[tkey]").each (function (index)
+					{
+						var strTr = [$(this).attr('tkey')];
+						$(this).html ("["+myvalue[strTr]+"]"); //añadir color rojo para reconocer cambios
+						//$(this).html (strTr);
+					});
+				}
+				translate();
+			 }
+			
+</script>
+
+</head>
+
+<body>
+    <tag tkey='text_translate'></tag>
+</body>
+
+<script type="text/javascript">
+    traducir();
+</script>
+
+</html>
